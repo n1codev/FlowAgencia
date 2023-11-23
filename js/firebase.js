@@ -11,6 +11,7 @@ var firebaseConfig = {
   
   // Inicialize o Firebase
   const app = firebase.initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
   
   // Referência para o Firestore
   const firestore = firebase.firestore();
