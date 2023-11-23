@@ -303,16 +303,16 @@
 					<form action="" class="contact__form">
 						<div class="contact__inputs">
 							<div class="contact__content">
-								<input type="email" placeholder=" " class="contact__input" />
+								<input type="email" placeholder=" " class="contact__input" required/>
 								<label for="" class="contact__label">Email</label>
 							</div>
 
 							<div class="contact__content">
-								<input type="text" placeholder=" " class="contact__input" />
+								<input type="text" placeholder=" " class="contact__input" required/>
 								<label for="" class="contact__label">Nome</label>
 							</div>
 							<div class="contact__content">
-								<input type="text" placeholder=" " class="contact__input" />
+								<input type="text" placeholder=" " class="contact__input" required/>
 								<label for="" class="contact__label">Telefone</label>
 							</div>
 
@@ -379,26 +379,22 @@
 						<li class="footer__information">(33) 9 8455-0964</li>
 
 						<div class="footer__social">
-							<a href="https://www.facebook.com/" class="footer__social-link">
-								<i class="ri-facebook-fill"></i>
-							</a>
-							<a href="https://www.instagram.com/" class="footer__social-link">
+							<a href="https://www.instagram.com/flow_agenciamkt" target="_blank" class="footer__social-link">
 								<i class="ri-instagram-line"></i>
-							</a>
-							<a href="https://twitter.com/" class="footer__social-link">
-								<i class="ri-twitter-fill"></i>
 							</a>
 						</div>
 					</ul>
 			</div>	
 		</footer>
 		<h1 class="credit"> © 2023 Agência Flow. Todos os direitos reservados. Desenvolvido por <a href="https://nicolinks.netlify.app" target="_blank"> Nícolas Berbert</a></h1>
-		<script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics-compat.js"></script>
 		<!--=============== SCROLL REVEAL ===============-->
 		<script src="js/scrollreveal.min.js"></script>
 		<!--=============== MAIN JS ===============-->
 		<script src="js/main.js"></script>
-		<script src="js/firebase.js"></script>
+		<script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/analytics.js"></script>
 	</body>
 </html>
