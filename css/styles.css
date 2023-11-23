@@ -8,13 +8,13 @@
 	--hue: 152;
 	--first-color:#79857f;
 	--first-color-alt: #818181;
-	--first-color-light: #79857f;
+	--first-color-light: hsl(var(--hue), 8%, 20%);
 	--first-color-lighten: #ebebeb;
-	--title-color: hsl(var(--hue), 4%, 15%);
-	--text-color: hsl(var(--hue), 4%, 35%);
+	--title-color: hsl(var(--hue), 4%, 95%);
+	--text-color: hsl(var(--hue), 4%, 75%);
 	--text-color-light: hsl(var(--hue), 4%, 55%);
-	--body-color: #e4e4e4;
-	--container-color: #fff;
+	--body-color: hsl(var(--hue), 8%, 12%);
+	--container-color: hsl(var(--hue), 8%, 16%);
 
 	/*========== Font and typography ==========*/
 	/*.5rem = 8px | 1rem = 16px ...*/
@@ -118,12 +118,12 @@ body.dark-theme {
 }
 
 .dark-theme .questions {
-	background-color: var(--first-color-dark);
+	background-color: var(--body-color);
 }
 
 .dark-theme .product__circle,
 .dark-theme .footer__subscribe {
-	background-color: var(--container-color);
+	background-color: var(--body-color);
 }
 
 .dark-theme .scroll-header {
@@ -528,7 +528,7 @@ body.dark-theme {
 }
 
 .questions {
-	background-color: var(--first-color-lighten);
+	background-color: var(--body-color);
 }
 
 .questions h2{
@@ -742,7 +742,7 @@ footer {
 }
 
 .footer__subscribe {
-	background-color: var(--first-color-lighten);
+	background-color: var(--body-color);
 	padding: 0.75rem;
 	display: flex;
 	justify-content: space-between;
@@ -805,11 +805,11 @@ footer {
  .credit {
 	font-size: 15px;
 	text-align: center;
-	border-top: 0.1rem solid #6e857a;
+	border-top: 0.1rem solid #79857f;
 	padding: 1.2rem 1rem;
 	font-weight: normal;
 	letter-spacing: 0.1rem;
-	color: var(--first-color-light);
+	color: var(--body-font);
 	text-transform: none;
 }
 
