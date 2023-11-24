@@ -140,3 +140,52 @@ sr.reveal(`.home__social`, {delay: 600})
 sr.reveal(`.about__img, .contact__box`,{origin: 'left'})
 sr.reveal(`.about__data, .contact__form`,{origin: 'right'})
 sr.reveal(`.steps__card, .product__card, .questions__group, .footer`,{interval: 100})
+
+// Função para abrir o popup
+
+function openPopup() {
+const openPopupBtn = document.getElementById('open-login-popup');
+const popup = document.getElementById('popup');
+
+openPopupBtn.addEventListener('click', () => {
+  // Exibe o popup ao clicar no botão
+  popup.style.display = 'block';
+});
+}
+
+function openPopup() {
+    document.getElementById('popup').style.display = 'flex';
+  }
+  
+  // Função para fechar o popup
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+  
+  // Capturar o formulário de inscrição
+  const subscriptionForm = document.getElementById('subscription-form');
+  
+  // Adicionar um listener para o envio do formulário
+  subscriptionForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = subscriptionForm.querySelector('input[type="email"]').value;
+  });
+  
+  // Exibir o popup após um determinado tempo (por exemplo, 5 segundos)
+  setTimeout(openPopup, 8000);
+  
+  document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
+
+    // Após a autenticação bem-sucedida, fecha o popup
+    closePopup();
+});
+
+// Evento de envio do formulário de inscrição
+document.getElementById('subscription-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
+
+
+    // Após a inscrição bem-sucedida, fecha o popup
+    closePopup();
+});
