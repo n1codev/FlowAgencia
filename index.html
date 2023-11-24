@@ -57,6 +57,13 @@
 					<div class="nav__toggle" id="nav-toggle">
 						<i class="ri-menu-line"></i>
 					</div>
+					<button id="open-login-popup">Entrar</button>
+					<script>
+						document.getElementById('open-login-popup').addEventListener('click', function() {
+							// Exibe o popup ao clicar no botão
+							document.getElementById('popup').style.display = 'flex';
+						});
+					</script>
 				</div>
 			</nav>
 		</header>
@@ -76,6 +83,50 @@
 						<a href="#about" class="button button--flex">
 							Saiba mais <i class="ri-arrow-right-down-line button__icon"></i>
 						</a>
+					</div>
+					<div class="popup" id="popup">
+						<div class="popup-content">
+							<div class="tabs">
+								<button class="tablinks" onclick="openTab(event, 'login')">Login</button> ou <br>
+								<button class="tablinks active" onclick="openTab(event, 'signup')">Inscreva-se</button>
+							</div>
+
+							<div id="login" class="tabcontent" style="display: none;">
+								<h2>Login:</h2>
+								<form id="login-form">
+									<input type="email" id="login-email" placeholder="E-mail" required>
+									<input type="password" id="login-password" placeholder="Senha" required>
+									<button type="submit">Entrar</button>
+								</form>
+							</div>
+					
+							<div id="signup" class="tabcontent" style="display: block;">
+								<h2>Inscreva-se:</h2>
+								<form id="subscription-form">
+									<input type="email" id="email" placeholder="E-mail" required>
+									<input type="telefone" id="telefone" placeholder="Telefone" required>
+									<input type="password" id="passwordInput" placeholder="Senha" required>
+									<button type="submit">Enviar</button>
+								</form>
+							</div>
+							
+							<button class="close-btn" onclick="closePopup()">Fechar</button>
+						</div>
+						<script>
+							function openTab(evt, tabName) {
+								var i, tabcontent, tablinks;
+								tabcontent = document.getElementsByClassName("tabcontent");
+								for (i = 0; i < tabcontent.length; i++) {
+									tabcontent[i].style.display = "none";
+								}
+								tablinks = document.getElementsByClassName("tablinks");
+								for (i = 0; i < tablinks.length; i++) {
+									tablinks[i].className = tablinks[i].className.replace(" active", "");
+								}
+								document.getElementById(tabName).style.display = "block";
+								evt.currentTarget.className += " active";
+							}
+						</script>
 					</div>
 				</div>
 			</section>
@@ -390,11 +441,13 @@
     <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js"></script>
 		<!--=============== SCROLL REVEAL ===============-->
 		<script src="js/scrollreveal.min.js"></script>
 		<!--=============== MAIN JS ===============-->
 		<script src="js/main.js"></script>
 		<script type="module" src="js/firebase.js"></script>
+		<script type="module" src="js/login.js"></script>
     <script type="module" src="js/analytics.js"></script>
 	</body>
 </html>
