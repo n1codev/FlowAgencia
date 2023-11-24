@@ -1,4 +1,4 @@
-import { app, firestore } from './firebase.js';
+import { app, firestore } from '../js/firebase.js';
 
 const auth = firebase.auth();
 
