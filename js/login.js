@@ -1,4 +1,4 @@
-import { app, firestore } from '../js/firebase.js';
+import { app, firestore } from './firebase.js';
 
 const auth = firebase.auth();
 
@@ -62,6 +62,7 @@ loginForm.addEventListener('submit', (e) => {
       const user = userCredential.user;
       console.log('Usuário logado:', user);
       // Redirecione ou faça algo após o login bem-sucedido
+      window.location.href = 'Ticket/index.html';
     })
     .catch((error) => {
       // Trate os erros de login
