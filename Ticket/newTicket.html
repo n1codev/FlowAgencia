@@ -28,13 +28,7 @@
             <li class="item-menu">
                 <a href="./newTicket.html">
                     <span class="icon"><i class="bi bi-ticket"></i></span>
-                    <span class="txt-link">Ticket</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="./dashboard.html">
-                    <span class="icon"><i class="bi bi-columns"></i></span>
-                    <span class="txt-link">Dashboard</span>
+                    <span class="txt-link">Tickets</span>
                 </a>
             </li>
             <li class="item-menu">
@@ -43,10 +37,17 @@
                     <span class="txt-link">Conta</span>
                 </a>
             </li>
+            <li class="item-menu">
+                <a id="logout-btn">
+                    <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
+                    <span class="txt-link">Sair</span>
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- Conteúdo Principal -->
         <main class="main-content">
+            <div class="usuario" id="user-info"></div>
             <section id="tickets" class="ticket-section">
                 <h2>Tickets Ativos</h2>
                 <div class="ticket-list">
@@ -59,7 +60,7 @@
                 <h2>Novo Ticket</h2>
                 <form id="new-ticket-form">
                     <!-- Formulário para criar um novo ticket -->
-                    <label for="ticket-title">Título do Ticket:</label>
+                    <label for="ticket-title">Assunto:</label>
                     <input type="text" id="ticket-title" name="ticket-title" required>
     
                     <label for="ticket-description">Descrição:</label>
@@ -68,23 +69,23 @@
                     <button type="submit">Criar Ticket</button>
                 </form>
             </section>
+            
         </main> 
 
     <!-- Rodapé -->
     <footer class="footer">
-        <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
+        <div class="container">
+            <p>&copy; 2023 Seu Site. Todos os direitos reservados.</p>
+        </div>
     </footer>
+    
     <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics-compat.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js"></script>
-		<!--=============== SCROLL REVEAL ===============-->
-		<script src="js/scrollreveal.min.js"></script>
+    
 		<!--=============== MAIN JS ===============-->
-		<script src="js/main.js"></script>
-		<script type="module" src="js/firebase.js"></script>
-		<script type="module" src="js/login.js"></script>
-    <script type="module" src="js/analytics.js"></script>
+		<script type="module" src="./scripts.js"></script>
+
     <!-- Adicione qualquer outro script necessário aqui -->
 </body>
 
