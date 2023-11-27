@@ -171,9 +171,6 @@ function openPopup() {
     const email = subscriptionForm.querySelector('input[type="email"]').value;
   });
   
-  // Exibir o popup após um determinado tempo (por exemplo, 5 segundos)
-  setTimeout(openPopup, 8000);
-  
   document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o envio padrão do formulário
 
@@ -185,7 +182,22 @@ function openPopup() {
 document.getElementById('subscription-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o envio padrão do formulário
 
-
-    // Após a inscrição bem-sucedida, fecha o popup
-    closePopup();
+    openTab(event, 'login');
 });
+
+function login() {
+    // Simulação de um login bem-sucedido
+    const user = { name: 'Usuário Exemplo' }; // Nome do usuário logado
+  
+    // Esconde o botão de login e mostra o botão de logout com o nome do usuário
+    document.getElementById('loginButton').style.display = 'none';
+    document.getElementById('logoutButton').innerText = `Logout (${user.name})`;
+    document.getElementById('logoutButton').style.display = 'block';
+  }
+  
+  // Função para realizar logout
+  function logout() {
+    // Simulação de um logout
+    document.getElementById('logoutButton').style.display = 'none';
+    document.getElementById('loginButton').style.display = 'block';
+  }
