@@ -90,9 +90,19 @@ ul li.item-menu a .icon > i{
 }
 
 /* Conteúdo Principal */
-.main-content {
-    margin-left: 50px;
+
+.usuario {
+    background-color: white;
+    border-radius: 8px;
     padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    margin-left: 60px;
+    padding: 20px;
+    min-height: calc(92.2vh - 40px);
 }
 
 .ticket-section {
@@ -138,6 +148,13 @@ ul li.item-menu a .icon > i{
 .footer {
     background-color: #333;
     color: white;
+    padding: 20px 0;
+    bottom: 0;
+}
+
+.footer .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
-    padding: 10px;
 }
