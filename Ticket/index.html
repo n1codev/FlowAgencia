@@ -15,6 +15,8 @@
     <!-- NavSideBar-->
     <nav class="menu-lateral">
 
+
+
         <div class="btn-expandir">
             <i class="bi bi-list"></i>
         </div>
@@ -28,13 +30,7 @@
             <li class="item-menu">
                 <a href="./newTicket.html">
                     <span class="icon"><i class="bi bi-ticket"></i></span>
-                    <span class="txt-link">Ticket</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="./dashboard.html">
-                    <span class="icon"><i class="bi bi-columns"></i></span>
-                    <span class="txt-link">Dashboard</span>
+                    <span class="txt-link">Tickets</span>
                 </a>
             </li>
             <li class="item-menu">
@@ -43,31 +39,39 @@
                     <span class="txt-link">Conta</span>
                 </a>
             </li>
+            <li class="item-menu">
+                <a id="logout-btn">
+                    <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
+                    <span class="txt-link">Sair</span>
+                </a>
+            </li>
         </ul>
+        
     </nav>
 
     <!-- Conteúdo Principal -->
     <main class="main-content">
-        <section id="tickets" class="ticket-section">
+        <div id="user-info" class="usuario"></div>
 
+        <section id="tickets" class="ticket-section">
+            <h1>Olá, Seja bem-vindo!</h1>
         </section>
     </main>
 
     <!-- Rodapé -->
     <footer class="footer">
-        <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
+        <div class="container">
+            <p>&copy; 2023 Seu Site. Todos os direitos reservados.</p>
+        </div>
     </footer>
+    
     <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics-compat.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js"></script>
-		<!--=============== SCROLL REVEAL ===============-->
-		<script src="js/scrollreveal.min.js"></script>
+    
 		<!--=============== MAIN JS ===============-->
-		<script src="js/main.js"></script>
-		<script type="module" src="js/firebase.js"></script>
-		<script type="module" src="js/login.js"></script>
-    <script type="module" src="js/analytics.js"></script>
+        <script type="module" src="./login.js"></script>
+
     <!-- Adicione qualquer outro script necessário aqui -->
 </body>
 
