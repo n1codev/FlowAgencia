@@ -234,6 +234,36 @@ body.dark-theme {
 	background-color: var(--first-color-alt);
 }
 
+#logout-button {
+	display: inline-block;
+	background-color: var(--first-color);
+	color: #fff;
+	padding: 10px;
+	border-radius: 0.5rem;
+	font-weight: var(--font-medium);
+	transition: 0.3s;
+
+}
+
+#logout-button:hover {
+	background-color: var(--first-color-alt);
+}
+
+#ticket-button {
+	display: inline-block;
+	background-color: var(--first-color);
+	color: #fff;
+	padding: 10px;
+	border-radius: 0.5rem;
+	font-weight: var(--font-medium);
+	transition: 0.3s;
+
+}
+
+#ticket-buttom:hover {
+	background-color: var(--first-color-alt);
+}
+
 @media screen and (max-width: 767px) {
 	.nav__menu {
 		position: fixed;
