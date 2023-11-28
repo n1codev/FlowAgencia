@@ -7,7 +7,8 @@
 }
 
 body {
-    background-color: #f4f4f4;
+    background-color: var(--body-color);
+    
 }
 
 :root {
@@ -30,7 +31,7 @@ body {
 nav.menu-lateral {
     width: 40px;
     height: 100%;
-    background-color: #333;
+    background-color: var(--body-color);
     padding: 40px 0 40px 1%;
     box-shadow: 3px 0 0 var(--first-color);
 
@@ -42,7 +43,7 @@ nav.menu-lateral {
 }
 
 nav.menu-lateral:hover {
-    width: 400px;
+    width: 300px;
     height: 100%;
     padding: 40px 0 40px 1%;
 }
@@ -67,7 +68,7 @@ ul li.item-menu a {
     color: #fff;
     text-decoration: none;
     font-size: 20px;
-    padding: 20px 4%;
+    padding: 16px 4%;
     display: flex;
     margin-bottom: 20px;
     line-height: 40px;
@@ -75,6 +76,7 @@ ul li.item-menu a {
 
 ul li.item-menu {
     transition: .5s;
+    cursor: pointer;
 }
 
 ul li.item-menu:hover {
@@ -89,24 +91,38 @@ ul li.item-menu a .icon > i{
     font-size: 24px;
 }
 
+#logout-btn {
+    margin-top: 385px;
+    text-align:end;
+
+  }
+
 /* Conteúdo Principal */
 
 .usuario {
-    background-color: white;
+    background-color: var(--container-color);
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
 }
 
 .main-content {
     margin-left: 60px;
     padding: 20px;
     min-height: calc(92.2vh - 40px);
+    color: var(--text-color);
+}
+
+.about__img {
+	margin-top: 50px;
+    margin-bottom: 50px;
+    width: 300px;
 }
 
 .ticket-section {
-    background-color: white;
+    background-color: var(--container-color);
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
@@ -129,6 +145,8 @@ ul li.item-menu a .icon > i{
 #new-ticket-form textarea {
     padding: 10px;
     margin-bottom: 16px;
+    border-radius: 10px;
+    background-color: var(--first-color-lighten);
 }
 
 #new-ticket-form button {
@@ -144,6 +162,17 @@ ul li.item-menu a .icon > i{
     background-color: #555;
 }
 
+.ticket {
+    padding: 10px;
+}
+
+.ticket-list {
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 1500px; /* Defina uma largura máxima para os tickets */
+    word-break: break-word; /* Evitar que o texto quebre para uma nova linha */
+}
+
 /* Rodapé */
 .footer {
     background-color: #333;
@@ -157,4 +186,36 @@ ul li.item-menu a .icon > i{
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+
+
+    nav.menu-lateral:hover {
+        width: 200px;
+        height: 100%;
+        padding: 40px 0 40px 1%;
+    }
+    
+    .btn-expandir {
+        width: 100%;
+        padding-left: 2px;
+    }
+    
+    .btn-expandir > i {
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .main-content {
+        margin-left: 50px;
+        padding: 20px;
+    }
+
+    #logout-btn {
+        margin-top: 370px;
+        text-align:end;
+    
+      }
 }
