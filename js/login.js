@@ -61,6 +61,7 @@ loginForm.addEventListener('submit', (e) => {
       // Acesse o usuário logado
       const user = userCredential.user;
       console.log('Usuário logado:', user);
+      alert('Login realizado com sucesso!');
       // Redirecione ou faça algo após o login bem-sucedido
       window.location.href = 'Ticket/index.html';
     })
@@ -70,7 +71,46 @@ loginForm.addEventListener('submit', (e) => {
       const errorMessage = error.message;
       console.error('Erro ao fazer login:', errorMessage);
       // Exiba uma mensagem de erro para o usuário
+      window.location.href = '../index.html'
     });
 });
 
-    
+// Função para atualizar a exibição dos botões com base no estado de autenticação
+function updateButtonVisibility(user) {
+  const loginButton = document.getElementById('open-login-popup');
+  const logoutButton = document.getElementById('logout-button');
+  const ticketButton = document.getElementById('ticket-button');
+
+  if (user) {
+      // Se o usuário estiver logado, exibe o botão de logout e oculta o botão de login
+      logoutButton.style.display = 'block';
+      loginButton.style.display = 'none';
+      ticketButton.style.display = 'block'; // Exibe o botão de tickets
+  } else {
+      // Se o usuário não estiver logado, exibe o botão de login e oculta o botão de logout
+      logoutButton.style.display = 'none';
+      loginButton.style.display = 'block';
+      ticketButton.style.display = 'none'; // Oculta o botão de tickets
+  }
+}
+
+// Verifica o estado de autenticação ao carregar a página ou quando o estado mudar
+firebase.auth().onAuthStateChanged((user) => {
+  updateButtonVisibility(user);
+});
+
+// Adiciona um listener para o botão de logout
+document.getElementById('logout-button').addEventListener('click', () => {
+  firebase.auth().signOut().then(() => {
+      // Logout realizado com sucesso, atualiza a exibição dos botões
+      updateButtonVisibility(null);
+      alert('Logout realizado com sucesso!');
+  }).catch((error) => {
+      // Tratamento de erros, se necessário
+      console.error('Erro ao fazer logout:', error);
+  });
+});
+
+document.getElementById('ticket-button').addEventListener('click', function() {
+  window.location.href = './Ticket/index.html'; // Substitua com o link correto para a página de tickets
+});  
