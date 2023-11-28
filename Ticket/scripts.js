@@ -74,16 +74,39 @@ function listarTickets(userId) {
         ticketElement.innerHTML = `
           <h3>${ticket.title}</h3>
           <p>${ticket.description}</p>
-          <p>Status: ${ticket.status}</p>
-        `;
-        ticketList.appendChild(ticketElement);
+          <p>Status: ${ticket.status}</p><button class="delete-btn" data-ticket-id="${doc.id}">Excluir</button>
+          `;
+          ticketList.appendChild(ticketElement);
+        });
+  
+        // Adiciona um listener para o botão de exclusão
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+        deleteButtons.forEach((button) => {
+          button.addEventListener('click', (e) => {
+            const ticketId = e.target.dataset.ticketId;
+            excluirTicket(ticketId);
+          });
+        });
+      })
+      .catch((error) => {
+        console.error('Erro ao recuperar tickets:', error);
       });
-    })
-    .catch((error) => {
-      console.error('Erro ao recuperar tickets:', error);
-    });
-}
-
+  }
+  
+  function excluirTicket(ticketId) {
+    db.collection('tickets')
+      .doc(ticketId)
+      .delete()
+      .then(() => {
+        console.log('Ticket excluído com sucesso!');
+        alert('Ticket excluído com sucesso!');
+        location.reload(); // Recarrega a página para exibir os tickets atualizados
+        // Recarregar a página ou fazer outra ação necessária após a exclusão
+      })
+      .catch((error) => {
+        console.error('Erro ao excluir ticket:', error);
+      });
+  }
 // Verifica o estado de autenticação ao carregar a página
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
