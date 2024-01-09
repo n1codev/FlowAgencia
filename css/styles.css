@@ -468,7 +468,7 @@ body.dark-theme {
 }
 
 .steps{
-	background-image: url('FlowAgencia/img/background 2.png');
+	background-image: url('../img/background 2.png');
 	background-size: 55%;
 	background-repeat: no-repeat;
 	background-position:left bottom;
@@ -700,7 +700,7 @@ body.dark-theme {
 }
 
 footer {
-	background-image: url('/FlowAgencia/img/background 3.png');
+	background-image: url('../img/background 3.png');
 	background-size: 50%;
 	background-repeat: no-repeat;
 	background-position:right bottom;
@@ -858,7 +858,7 @@ footer {
 
 	.home{
 
-			background-image: url('/FlowAgencia/img/background.png');
+			background-image: url('../img/background.png');
 			background-size: 300px;
 			background-repeat: no-repeat;
 			background-position:right bottom;
@@ -892,7 +892,7 @@ footer {
 	}
 
 	footer {
-		background-image: url('/FlowAgencia/img/background 3.png');
+		background-image: url('../img/background 3.png');
 		background-size: 100%;
 		background-repeat: no-repeat;
 		background-position:right bottom;
