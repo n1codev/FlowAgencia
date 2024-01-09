@@ -288,7 +288,7 @@ body.dark-theme {
 .home {
 	padding: 1rem  2rem 5rem;
 	background-color: var(--container-color);
-	background-image: url('FlowAgencia/img/background.png');
+	background-image: url('/FlowAgencia/img/background.png');
 	background-size: 50%;
 	background-repeat: no-repeat;
 	background-position:right bottom;
